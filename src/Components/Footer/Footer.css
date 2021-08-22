@@ -1,0 +1,46 @@
+.list{
+    list-style-type: none ;
+    padding-left: 60px !important;
+   
+    color:white !important;
+
+}
+.topcities{
+    font-weight: 600 !important;
+    padding-left: 40px !important;
+    padding-top: 30px !important;
+    color: white !important;
+   
+    
+}
+.container{
+    background-color: #e22335;
+    margin-top: 100px !important;
+    box-sizing: border-box !important;
+}
+.listCities{
+    padding-bottom: 20px !important;
+}
+.FooterDivider{
+    border-top: 1px solid white !important;
+}
+.FooterLinks{
+    color: white !important;
+    
+}
+.FooterLinks:hover{
+    color: white !important;
+    text-decoration: none !important;
+    
+}
+.FooterButton{
+    color:white !important
+}
+.divButton{
+    display: flex;
+  align-items: center;
+}
+.FooterBrand{
+   float: right !important;
+   color: white !important;
+}
