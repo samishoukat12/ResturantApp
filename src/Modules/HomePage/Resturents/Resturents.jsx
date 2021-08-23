@@ -9,18 +9,18 @@ import Hardees from "../../../Assets/Kfc/Hardees.svg"
 import whiteCastle from "../../../Assets/Kfc/whiteCastle.png"
 import dominos from "../../../Assets/Kfc/dominos.jpg"
 import DocSaucy from "../../../Assets/Kfc/Drs.jpg"
-import { Badge, Container, Grid, Link, Typography } from '@material-ui/core';
+import { Badge, Container, Grid, Typography } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import {Link} from "react-router-dom"
 import "./Resturents.css"
 import { CardGroup } from 'react-bootstrap';
 import WidgetsIcon from '@material-ui/icons/Widgets';
-
-
-
+import {useResturents} from "./useResturents"
+import { PongSpinner  } from "react-spinners-kit";
 export default function Resturents() {
-
-
-    return (
+   
+const [Loading,Resturents,handleLoading] = useResturents()
+   return (
         <>
         <Container style={{marginTop:70}}>
            <Typography className="listRes"> Lists Of Resturents <WidgetsIcon fontSize="large" style={{paddingLeft:10}}/></Typography>
@@ -28,26 +28,39 @@ export default function Resturents() {
             <Container>
            <div className="row">
            <CardGroup>
-               <div className="column">
-               <Grid item xs={3}>
-               <Badge badgeContent="30% OFF" color="secondary"  >
-               <Link href="#" className="cards">
-                   <Card style={{ width: '18rem' }} className="cardsBorder">
-                       <center> <Card.Img variant="top" src={KFC} className="zoom" /></center>
-                        <Card.Body>
-                            <Card.Title className="cardsTitle">KFC</Card.Title>
-                            <Card.Text className="cardsDetails">
-                            Get 9 Pcs Hot & Crispy Chicken for JUST Rs. 1250. KFC 
-                            <br/>
-                            Hurry Up!!! Get It Now.                           </Card.Text>
-                            <div className="ButtonPadding"> <Button className="cardsButton">Order Now<ArrowForwardIcon/></Button></div>
-                        </Card.Body>
-                    </Card>
-                   </Link>
-                   </Badge>
-                </Grid>
-               </div>
-               <div className="column">
+              
+             <div>
+                 {
+                     Loading? 
+                 <center>
+                        <PongSpinner color="#e22335" size="100"/>
+                 </center>
+                     :
+                     Resturents.map((items)=>{
+                        return(
+                          
+                          <div className="column">
+                          <Grid item xs={3}>
+                          <Badge badgeContent="30% OFF" color="secondary"  >
+                          <Link href="#" className="cards">
+                              <Card style={{ width: '18rem' }} className="cardsBorder">
+                                  <center> <Card.Img variant="top" src={items.img} className="zoom" /></center>
+                                   <Card.Body>
+                                       <Card.Title className="cardsTitle">{items.name}</Card.Title>
+                                       <Card.Text className="cardsDetails">
+                                      {items.description}                     </Card.Text>
+                                       <div className="ButtonPadding"> <Button className="cardsButton">Order Now<ArrowForwardIcon/></Button></div>
+                                   </Card.Body>
+                               </Card>
+                              </Link>
+                              </Badge>
+                           </Grid>
+                          </div>
+                        )
+                    })
+                 }
+             </div>
+               {/* <div className="column">
                <Grid item xs={3}>
                <Link href="#" className="cards">
                    <Card style={{ width: '18rem' }} className="cardsBorder">
@@ -159,7 +172,7 @@ export default function Resturents() {
                     </Card>
                    </Link>
                 </Grid>
-               </div>
+               </div> */}
                 </CardGroup>
            </div>
             </Container>

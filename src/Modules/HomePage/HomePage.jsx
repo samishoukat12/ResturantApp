@@ -68,7 +68,6 @@ export default function HomePage() {
       </Container>
       <SliderRes/>
       <Resturents/>
-      <Footer/>
 </>
     
   );
