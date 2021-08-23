@@ -1,39 +1,61 @@
 import React from "react";
-import Slider from "react-slick";
-import KFCSlider from "../../../Assets/Slider/KFCSlider.png"
-import pizzahut from "../../../Assets/Slider/pizzahut.jpg"
-import dominos from "../../../Assets/Slider/dominos.jfif"
-import familyBox from "../../../Assets/Slider/familybox.jfif"
-import macdonald from "../../../Assets/Slider/macdonald.jfif"
+import Carousel from "react-material-ui-carousel";
+import { Paper, Button } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
+import { useState, useEffect } from "react";
+// import "./Carousel.css";
+import { PongSpinner, WaveSpinner } from "react-spinners-kit";
+import { useSlider } from "./useSlider";
 import "./Slider.css"
-export default function SimpleSlider() {
-  var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
-  };
+import { Image } from "react-bootstrap";
+
+
+export default function CarouselSlider(props) {
+  const [Loading,SliderImage] = useSlider();
+  if (Loading) {
+    return (
+      <div>
+        {/* <center>
+        <PongSpinner color="#e22335" size="100"/>
+        </center> */}
+         <center>
+        <Skeleton variant="rect" width={1300} height={500} />
+      </center>
+      </div>
+    );
+  }
+
   return (
-    <Slider {...settings}>
-      <div>
-       <center> <img src={KFCSlider} className="sliderImage" /></center>
-      </div>
-      <div>
-      <center> <img src={pizzahut}  className="sliderImage"/></center>
-      </div>
-      <div>
-      <center> <img src={dominos}  className="sliderImage"/></center>
-      </div>
-      <div>
-      <center> <img src={familyBox}  className="sliderImage"/></center>
-      </div>
-      <div>
-      <center> <img src={macdonald}  className="sliderImage" /></center>
-      </div>
-      <div>
-      <center> <img src={KFCSlider}  className="sliderImage"/></center>
-      </div>
-    </Slider>
-  );
+    <Carousel
+    animation="slide"
+    timeout={800}
+    swipe="boolean"
+    fullHeightHover="boolean"
+    indicators="false">
+        {
+            SliderImage.map( (item, i) => <Item key={i} item={item} /> )
+        }
+    </Carousel>
+)
+}
+
+function Item(props)
+{
+  const[Loading]=useSlider()
+  if (Loading) {
+    return (
+      <center>
+        <Skeleton variant="rect" width={1300} height={500} />
+      </center>
+    );
+  }
+return (
+    <Paper>
+    <center>
+    <Image src={props.item.img} className="sliderImage"  alt="broken-img"/>
+</center>       
+
+      
+    </Paper>
+)
 }

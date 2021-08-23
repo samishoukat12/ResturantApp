@@ -1,37 +1,25 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from '../Components/Navbar/Navbar';
-import HomePage from '../Modules/HomePage/HomePage';
-import LoginForm from '../Modules/Login/LoginForm';
-import SignUp from '../Modules/SignUp/SignUp';
-import PrivateRouting from './PrivateRouting';
-import PublicRouting from './PublicRouting';
-export default function MainRouting() {
-    const authState = useSelector(state => state.AuthReducer.isUserLoggedIn)
-
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+import Navbar from "../Components/Navbar/Navbar"
+import Footer from "../Components/Footer/Footer"
+import HomePage from "../Modules/HomePage/HomePage";
+import LoginForm from "../Modules/Login/LoginForm";
+import SignUp from "../Modules/SignUp/SignUp";
+export default function RoutinG() {
     return (
-        <div>
-            <Router>
-                <Navbar/>
-                <Switch>
-                    <Route path="/">
-                        <HomePage/>
-                    </Route>
-                    <Route path="/login"><LoginForm/></Route>
-                    <Route path="/SignUp"><SignUp/></Route>
-                   
-                 {/* <PublicRouting path="/login" auth={authState}>
-                    <HomePage />
-                    {
-                    authState ? (<HomePage />) : (<LoginForm />)
-                }
-                </PublicRouting>
-                <PrivateRouting path="/HomePage" auth={authState}>
-                    <HomePage />
-                </PrivateRouting>   */}
-                </Switch>
-            </Router>
-        </div>
-    )
+        <Router>
+            <Navbar/>
+            <Switch>
+                <Route exact path="/" component={HomePage}/>
+                <Route path="/login" component={LoginForm}/>
+                <Route path="/SignUp" component={SignUp}/>
+
+               
+            </Switch>
+          <Footer/>
+        </Router>
+    );
 }

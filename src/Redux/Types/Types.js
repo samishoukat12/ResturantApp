@@ -1,1 +1,3 @@
 export const LOGIN="LOGIN"
+export const RESTURENTS_FETCH="RESTURENTS_FETCH"
+export const SLIDER_FETCH="SLIDER_FETCH"

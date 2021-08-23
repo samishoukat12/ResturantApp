@@ -11,7 +11,7 @@ import { Container, Grid, Hidden } from '@material-ui/core';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import "./Navbar.css"
-import { Link } from "react-router-dom"
+import{Link} from "react-router-dom"
 import HomePage from '../../Modules/HomePage/HomePage';
 import { useSelector } from 'react-redux';
 
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
     color: {
         backgroundColor: "#e22335",
-        height: 70
+        height:70
         //   boxShadow:"none"
     }
 
@@ -59,30 +59,25 @@ export default function Navbar() {
                         </Grid>
                         <Grid item xs={9}>
                             <Typography variant="h6" className={classes.title}>
-                                <Link href="#" className="Link">
+                                <Link to="/" className="Link">
                                     DummyName
                                     <FastfoodIcon style={{ paddingLeft: 8 }} fontSize="large" />
                                 </Link>
                             </Typography>
                         </Grid>
-
+                        
                         <Grid item xs={2}>
                             <Hidden xsDown implementation="css">
-{
-                                authState ?
-                                (<div>   <Link className="button" to="/HomePage">Home</Link></div>)
-                                :
-                                (<div>   <Link href="#" className="button">EN</Link>
-                                    <Link to="/login" className="button" >Login<AccountCircleIcon className="ButtonIcon" />
-                                    </Link></div>)
-                                }
+                                <Link href="#" className="button">EN</Link>
+                                <Link to="/login" className="button" >Login<AccountCircleIcon className="ButtonIcon" />
+                                </Link>
                                 {/* <Link href="#" className="cartButton"><ShoppingCartIcon/></Link> */}
                             </Hidden>
                         </Grid>
                     </Toolbar>
                 </AppBar>
             </Grid>
-
+            
 
         </div>
     );
