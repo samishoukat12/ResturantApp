@@ -1,13 +1,12 @@
-import Navbar from './Components/Navbar/Navbar';
-import LoginForm from "./Modules/Login/LoginForm"
-import SignUp from './Modules/SignUp/SignUp';
+import React from 'react'
 import MainRouting from './Routing/MainRouting';
 function App() {
+
   return (
-    <>
-    {/* <LoginForm/> */}
+    <div style={{overflow:"hidden"}}>
+  
    <MainRouting/>
-    </>
+    </div>
   );
 }
 
