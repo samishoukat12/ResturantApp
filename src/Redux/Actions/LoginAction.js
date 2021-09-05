@@ -1,5 +1,5 @@
-import {auth,db} from "../../Config/Firebase"
-import { LOGIN } from "../Types/Types";
+import {auth,db,storage,Firebase} from "../../Config/Firebase"
+import { ALREADY_LOGIN, LOGIN,LOGOUT } from "../Types/Types";
 export const LoginAction=(Email,Password)=>async(dispatch)=>{
 try {
     let userCredentials=await auth.signInWithEmailAndPassword(Email,Password)
@@ -14,19 +14,67 @@ dispatch({
 }
 }
 
-export const doSignUpAction = (user) => async (dispatch) => {
+export const doSignUpAction = (user,e, file, setFile, setURL,) => async (dispatch) => {
     try {
         //FIREBASE LOGIN
         const userCredential = await auth.createUserWithEmailAndPassword(user.Email, user.Password);
         var userData = userCredential.user;
+        const ref = storage.ref(`/images/${file.name}`);
+        const uploadTask = ref.put(file);
+        uploadTask.on("state_changed", console.log, console.error, () => {
+          ref
+            .getDownloadURL()
+            .then((url) => {
+              setFile(null);
+              setURL(url);
+              db.collection("users").add({
+                  ...user,
+                  image:url,
+                   uid: userData.uid
+                });
+            });
+        });
         // FIREBASE DATABASE
-        await db.collection("users").add({
-            ...user,
-            uid: userData.uid
-        })
         dispatch({
             type: LOGIN,
             payload: userData,
+        })
+    } catch (error) {
+        alert(JSON.stringify(error))
+        console.log(error);
+    }
+}
+export const alreadyLoginUser = (setLoading) => async (dispatch) => {
+    try {
+        const LoginUser = await Firebase.auth().onAuthStateChanged((user) => {
+
+            if (user) {
+                var uid = user.uid;
+                console.log("already", uid);
+                dispatch({
+                    payload: user,
+                    type: ALREADY_LOGIN
+
+
+                })
+                setLoading(false)
+            }
+            else {
+                setLoading(false)
+            }
+            // console.log("LoginUser", LoginUser);
+        })
+    } catch (error) {
+        alert(JSON.stringify(error))
+    }
+
+}
+export const doLogout = () => async (dispatch) => {
+    try {
+        const res = await auth.signOut();
+        console.log("user", res);
+        dispatch({
+            type: LOGOUT,
         })
     } catch (error) {
         alert(JSON.stringify(error))

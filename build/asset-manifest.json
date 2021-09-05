@@ -1,31 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.2cfc9c64.chunk.css",
-    "main.js": "/static/js/main.a0a5bedc.chunk.js",
-    "main.js.map": "/static/js/main.a0a5bedc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.300f92c0.js",
-    "runtime-main.js.map": "/static/js/runtime-main.300f92c0.js.map",
-    "static/js/2.0423d2bc.chunk.js": "/static/js/2.0423d2bc.chunk.js",
-    "static/js/2.0423d2bc.chunk.js.map": "/static/js/2.0423d2bc.chunk.js.map",
-    "static/js/3.6032463f.chunk.js": "/static/js/3.6032463f.chunk.js",
-    "static/js/3.6032463f.chunk.js.map": "/static/js/3.6032463f.chunk.js.map",
+    "main.css": "/static/css/main.652d25c5.chunk.css",
+    "main.js": "/static/js/main.ff24602a.chunk.js",
+    "main.js.map": "/static/js/main.ff24602a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.16ad3a9d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.16ad3a9d.js.map",
+    "static/js/2.402af3f9.chunk.js": "/static/js/2.402af3f9.chunk.js",
+    "static/js/2.402af3f9.chunk.js.map": "/static/js/2.402af3f9.chunk.js.map",
+    "static/js/3.c6880032.chunk.js": "/static/js/3.c6880032.chunk.js",
+    "static/js/3.c6880032.chunk.js.map": "/static/js/3.c6880032.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.2cfc9c64.chunk.css.map": "/static/css/main.2cfc9c64.chunk.css.map",
-    "static/js/2.0423d2bc.chunk.js.LICENSE.txt": "/static/js/2.0423d2bc.chunk.js.LICENSE.txt",
-    "static/media/Drs.44721e63.jpg": "/static/media/Drs.44721e63.jpg",
-    "static/media/Hardees.99965ab7.svg": "/static/media/Hardees.99965ab7.svg",
-    "static/media/KFC.dee85a04.png": "/static/media/KFC.dee85a04.png",
-    "static/media/burgerKing.0d946198.png": "/static/media/burgerKing.0d946198.png",
-    "static/media/dominos.f7e07b0a.jpg": "/static/media/dominos.f7e07b0a.jpg",
-    "static/media/food.157a4efd.png": "/static/media/food.157a4efd.png",
-    "static/media/mac.63a60326.png": "/static/media/mac.63a60326.png",
-    "static/media/pizzahut.2d457e4a.png": "/static/media/pizzahut.2d457e4a.png",
-    "static/media/whiteCastle.cc155d0e.png": "/static/media/whiteCastle.cc155d0e.png"
+    "static/css/main.652d25c5.chunk.css.map": "/static/css/main.652d25c5.chunk.css.map",
+    "static/js/2.402af3f9.chunk.js.LICENSE.txt": "/static/js/2.402af3f9.chunk.js.LICENSE.txt",
+    "static/media/food.157a4efd.png": "/static/media/food.157a4efd.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.300f92c0.js",
-    "static/js/2.0423d2bc.chunk.js",
-    "static/css/main.2cfc9c64.chunk.css",
-    "static/js/main.a0a5bedc.chunk.js"
+    "static/js/runtime-main.16ad3a9d.js",
+    "static/js/2.402af3f9.chunk.js",
+    "static/css/main.652d25c5.chunk.css",
+    "static/js/main.ff24602a.chunk.js"
   ]
 }

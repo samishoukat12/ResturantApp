@@ -1,0 +1,21 @@
+/* @media only screen and (max-width: 548px) {
+    .BurgerImg{
+     margin-left: -20px !important;
+    }
+}
+@media only screen and (max-width: 375px) {
+    .BurgerImg{
+        margin-left: -20px !important;
+       }
+}
+@media only screen and (min-width: 375px) {
+    .BurgerImg{
+        margin-left: -20px !important;
+       }
+} */
+.responsive_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Prevent the image from stretching. So it crops the image to prevent from awkward stretching */
+}

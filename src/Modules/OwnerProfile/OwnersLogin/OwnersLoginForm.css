@@ -1,0 +1,12 @@
+.LoginForm{
+    border-right: 1px solid #e22335 !important;
+    height: 634px !important;
+  }
+  .LinkStyle{
+    text-decoration: none !important;
+    color: #e22335;
+    font-size: 17px !important;
+  }
+  .LinkStyle:hover{
+    text-decoration: underline !important;
+  }

@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button } from "@material-ui/core";
+import { Paper, Button, Container } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 import { useState, useEffect } from "react";
 // import "./Carousel.css";
@@ -19,14 +19,15 @@ export default function CarouselSlider(props) {
         <PongSpinner color="#e22335" size="100"/>
         </center> */}
          <center>
-        <Skeleton variant="rect" width={1300} height={500} />
+        <Skeleton variant="rect" className="responsive_img" />
       </center>
       </div>
     );
   }
 
   return (
-    <Carousel
+   <Container>
+      <Carousel
     animation="slide"
     timeout={800}
     swipe="boolean"
@@ -36,6 +37,7 @@ export default function CarouselSlider(props) {
             SliderImage.map( (item, i) => <Item key={i} item={item} /> )
         }
     </Carousel>
+   </Container>
 )
 }
 
@@ -52,7 +54,7 @@ function Item(props)
 return (
     <Paper>
     <center>
-    <Image src={props.item.img} className="sliderImage"  alt="broken-img"/>
+    <Image src={props.item.img} className="responsive_img"  alt="broken-img"/>
 </center>       
 
       

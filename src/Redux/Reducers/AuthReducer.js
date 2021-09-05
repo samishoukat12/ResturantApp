@@ -1,4 +1,4 @@
- import {LOGIN} from "../Types/Types"
+ import {ALREADY_LOGIN, LOGIN,LOGOUT} from "../Types/Types"
  
  const initialState={
     isUserLoggedIn:false,
@@ -11,6 +11,18 @@ export default function Login(state=initialState,action){
                 ...state,
                 isUserLoggedIn:true,
                 user:action.payload,
+            }
+            case ALREADY_LOGIN:
+                return{
+                    ...state,
+                    isUserLoggedIn:true,
+                    users:action.payload
+                }
+                case LOGOUT:
+            return {
+                ...state,
+                isUserLoggedIn: false,
+                users: null
             }
            
     

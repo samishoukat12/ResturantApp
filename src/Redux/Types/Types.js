@@ -1,3 +1,6 @@
 export const LOGIN="LOGIN"
 export const RESTURENTS_FETCH="RESTURENTS_FETCH"
 export const SLIDER_FETCH="SLIDER_FETCH"
+export const ALREADY_LOGIN="ALREADY_LOGIN"
+export const LOGOUT="LOGOUT"
+export const OWNER_ADD="OWNER_ADD"

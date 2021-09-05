@@ -9,12 +9,16 @@ import MailIcon from '@material-ui/icons/Mail';
 import LockOpenIcon from '@material-ui/icons/LockOpen';
 import "./LoginForm.css"
 import SignUp from "../SignUp/SignUp";
-import {Link} from  "react-router-dom"
+import {Link,useHistory} from  "react-router-dom"
+import toast, { Toaster } from 'react-hot-toast';
+import { useSelector } from "react-redux";
 export default function LoginForm() {
-  const [Email, password, setEmail, setPassword, ctaLogin, error] = useLogin();
+  const [Email, password, setEmail, setPassword, ctaLogin, error,message] = useLogin();
+
   return (
     <div>
       <>
+    {message}
        <Grid container>
        <Grid item xs={12} sm={12} md={6} lg={6} xl={6} className="LoginForm">
        <Container style={{width:400,paddingTop:150}}>
@@ -59,9 +63,11 @@ export default function LoginForm() {
               variant="filled"
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Link href="#" style={{marginTop:20}}>Forget Password </Link><br />
-            <Link to="/SignUp">Create An Account</Link>
+          
             <Button onClick={ctaLogin} style={{backgroundColor:"#e22335",color:"white",marginTop:20}}><Typography style={{paddingLeft:100,paddingRight:100}}>Login</Typography></Button>
+<br/>
+            <Link href="#" style={{marginTop:20}} className="LinkStyle">Forget Password </Link><br />
+            <Link to="/SignUp" className="LinkStyle">Create An Account</Link>
           </center>
         </Container>
        </Grid>

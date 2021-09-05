@@ -2,3 +2,10 @@
     height: 500px;
     width: 1300px;
 }
+.responsive_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    box-sizing: border-box !important;
+    /* Prevent the image from stretching. So it crops the image to prevent from awkward stretching */
+}

@@ -34,13 +34,17 @@
     
 }
 .FooterButton{
-    color:white !important
+    color:white !important;
+    display: flex !important;
+    justify-content: center !important;
 }
 .divButton{
     display: flex;
-  align-items: center;
+    justify-content: center;
 }
 .FooterBrand{
-   float: right !important;
+    display: flex !important;
+    justify-content: center !important;
+   /* float: right !important; */
    color: white !important;
 }
